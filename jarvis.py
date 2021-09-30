@@ -50,14 +50,12 @@ def wishme():
 	speak("Jarvis at your service and please tell me how can I help you???")
 
 def TakeCommand():
-	r=sr.Recognizer()
-	with sr.Microphone() as source:
-		print("Listening....")
-		r.pause_threshold = 1
-		audio=r.listen(source)
+
 	try:
 		print("Recognizing....")
-		query=r.recognize_google(audio,language='en-US')
+		file1 = open("newfile.txt","r")
+		query=str(file1.readline())
+		file1.close()
 		print(query)
 	
 	except Exception as e:
